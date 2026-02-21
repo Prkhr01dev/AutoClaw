@@ -80,6 +80,4 @@ npm run test:unit   # Unit tests only
 | `data/skills/*.md` | Procedural skill templates (auto-injected) |
 | `config.json` | All configuration (LLM, Telegram, tools, security) |
 
-## License
 
-MIT
