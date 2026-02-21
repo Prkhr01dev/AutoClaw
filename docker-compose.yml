@@ -1,0 +1,29 @@
+services:
+  aatman:
+    build: .
+    container_name: aatman-gateway
+    restart: unless-stopped
+    user: "1001:1001"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:size=100M
+    volumes:
+      - ./data:/data
+      - ./config.json:/app/config.json:ro
+    environment:
+      - NODE_ENV=production
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1G
+        reservations:
+          cpus: "0.5"
+          memory: 256M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

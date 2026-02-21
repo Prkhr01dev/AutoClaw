@@ -1,0 +1,29 @@
+{
+  "name": "aatman-gateway",
+  "version": "1.0.0",
+  "description": "Local-first autonomous AI agent platform — Agency over Chat",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test tests/**/*.test.js",
+    "test:unit": "node --test tests/unit/**/*.test.js",
+    "test:integration": "node --test tests/integration/**/*.test.js"
+  },
+  "dependencies": {
+    "grammy": "^1.30.0",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "better-sqlite3": "^11.7.0",
+    "sqlite-vec": "^0.1.6",
+    "node-cron": "^3.0.3",
+    "playwright": "^1.49.0",
+    "uuid": "^11.0.5",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {}
+}

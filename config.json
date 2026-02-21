@@ -1,0 +1,62 @@
+{
+    "llm": {
+        "provider": "rapidapi",
+        "model": "conversationgpt4-2",
+        "apiKey": "",
+        "baseUrl": "",
+        "ollamaUrl": "http://localhost:11434",
+        "maxTokens": 4096,
+        "temperature": 0.9,
+        "rateLimitPerMinute": 30,
+        "retryAttempts": 3,
+        "retryDelayMs": 1000
+    },
+    "telegram": {
+        "botToken": "",
+        "allowedUserIds": [],
+        "rateLimitPerMinute": 20
+    },
+    "tools": {
+        "fs": {
+            "rootDir": "./data/workspace",
+            "maxFileSizeBytes": 10485760,
+            "allowedExtensions": []
+        },
+        "bash": {
+            "timeoutMs": 30000,
+            "maxOutputBytes": 1048576,
+            "blockedEnvVars": [
+                "API_KEY",
+                "SECRET",
+                "TOKEN",
+                "PASSWORD",
+                "PRIVATE_KEY"
+            ]
+        },
+        "browser": {
+            "timeoutMs": 15000,
+            "allowedDomains": [],
+            "blockedDomains": [],
+            "headless": true
+        }
+    },
+    "memory": {
+        "dbPath": "./data/aatman.db",
+        "embeddingDimensions": 384,
+        "maxContextResults": 5
+    },
+    "logging": {
+        "level": "info",
+        "auditLogPath": "./data/logs/audit.jsonl"
+    },
+    "scheduler": {
+        "enabled": true,
+        "maxConcurrentJobs": 5
+    },
+    "security": {
+        "maxIterations": 10,
+        "confirmDestructive": true,
+        "groupChatSandbox": true,
+        "inputMaxLength": 10000
+    }
+}
